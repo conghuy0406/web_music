@@ -8,20 +8,32 @@ namespace WebApplication2.Models
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model11")
+            : base("name=ModelMusic")
         {
         }
 
-        public virtual DbSet<BaiBao> BaiBao { get; set; }
-        public virtual DbSet<TacGia> TacGia { get; set; }
+        public virtual DbSet<Album> Album { get; set; }
+        public virtual DbSet<BaiHat> BaiHat { get; set; }
+        public virtual DbSet<CaSi> CaSi { get; set; }
+        public virtual DbSet<NguoiDung> NguoiDung { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TheLoai> TheLoai { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TacGia>()
-                .HasMany(e => e.BaiBao)
-                .WithOptional(e => e.TacGia)
-                .HasForeignKey(e => e.tac_gia_id)
-                .WillCascadeOnDelete();
+            modelBuilder.Entity<CaSi>()
+                .Property(e => e.TieuSu)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CaSi>()
+                .HasMany(e => e.BaiHat)
+                .WithRequired(e => e.CaSi)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TheLoai>()
+                .HasMany(e => e.BaiHat)
+                .WithRequired(e => e.TheLoai)
+                .WillCascadeOnDelete(false);
         }
     }
 }

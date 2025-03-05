@@ -11,8 +11,8 @@ namespace WebApplication2.Controllers
     {
         public ActionResult Index()
         {
-            Model1 model = new Model1();
-            return View(model.TacGia.ToList());
+            Model1 user = new Model1();
+            return View(user.NguoiDung.ToList());
         }
 
         public ActionResult AlbumsStore()
@@ -43,6 +43,10 @@ namespace WebApplication2.Controllers
         public ActionResult Login()
         {
             return View("login");
+        }
+        public ActionResult Register()
+        {
+            return View("register");
         }
     }
 }

@@ -6,28 +6,23 @@ namespace WebApplication2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TacGia")]
-    public partial class TacGia
+    [Table("TheLoai")]
+    public partial class TheLoai
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TacGia()
+        public TheLoai()
         {
-            BaiBao = new HashSet<BaiBao>();
+            BaiHat = new HashSet<BaiHat>();
         }
 
-        public int id { get; set; }
+        [Key]
+        public int MaTheLoai { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string ten { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string email { get; set; }
-
-        public DateTime? ngay_tao { get; set; }
+        [StringLength(255)]
+        public string TenTheLoai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaiBao> BaiBao { get; set; }
+        public virtual ICollection<BaiHat> BaiHat { get; set; }
     }
 }

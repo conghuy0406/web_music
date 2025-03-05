@@ -29,7 +29,7 @@
             <div></div>
         </div>
     </div>
-    @foreach (var item in Model)
+
     {
         <!-- ##### Header Area Start ##### -->
         <header class="header-area">
@@ -55,64 +55,65 @@
                                 <div class="classycloseIcon">
                                     <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                                 </div>
+                                @foreach (var item in Model)
+                                {
+                                    <!-- Nav Start -->
+                                    <div class="classynav">
+                                        <ul>
+                                            <li><a href="@Url.Action("Index", "Home")">@item.TenDangNhap</a></li>
+                                            <li><a href="@Url.Action("AlbumsStore", "Home")">Albums</a></li>
 
-                                <!-- Nav Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li><a href="~/Views/Home/index.cshtml">@item.ten</a></li>
-                                        <li><a href="@Url.Action("AlbumsStore", "Home")">Albums</a></li>
+                                            <li>
+                                                <a href="#">Pages</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                                    <li><a href="@Url.Action("AlbumsStore", "Home")">Albums</a></li>
+                                                    <li><a href="@Url.Action("Event", "Home")">Events</a></li>
+                                                    <li><a href="@Url.Action("Blog", "Home")">News</a></li>
+                                                    <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                                                    <li><a href="@Url.Action("Elements", "Home")">Elements</a></li>
+                                                    <li><a href="@Url.Action("Login", "Home")">Login</a></li>
+                                                    <li>
+                                                        <a href="#">Dropdown</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Even Dropdown</a></li>
+                                                            <li><a href="#">Even Dropdown</a></li>
+                                                            <li><a href="#">Even Dropdown</a></li>
+                                                            <li>
+                                                                <a href="#">Even Dropdown</a>
+                                                                <ul class="dropdown">
+                                                                    <li><a href="#">Deeply Dropdown</a></li>
+                                                                    <li><a href="#">Deeply Dropdown</a></li>
+                                                                    <li><a href="#">Deeply Dropdown</a></li>
+                                                                    <li><a href="#">Deeply Dropdown</a></li>
+                                                                    <li><a href="#">Deeply Dropdown</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="#">Even Dropdown</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="@Url.Action("Event", "Home")">Events</a></li>
+                                            <li><a href="@Url.Action("Blog", "Home")">News</a></li>
+                                            <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
+                                        </ul>
 
-                                        <li>
-                                            <a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                                                <li><a href="@Url.Action("AlbumsStore", "Home")">Albums</a></li>
-                                                <li><a href="@Url.Action("Event", "Home")">Events</a></li>
-                                                <li><a href="@Url.Action("Blog", "Home")">News</a></li>
-                                                <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-                                                <li><a href="@Url.Action("Elements", "Home")">Elements</a></li>
-                                                <li><a href="@Url.Action("Login", "Home")">Login</a></li>
-                                                <li>
-                                                    <a href="#">Dropdown</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="#">Even Dropdown</a></li>
-                                                        <li><a href="#">Even Dropdown</a></li>
-                                                        <li><a href="#">Even Dropdown</a></li>
-                                                        <li>
-                                                            <a href="#">Even Dropdown</a>
-                                                            <ul class="dropdown">
-                                                                <li><a href="#">Deeply Dropdown</a></li>
-                                                                <li><a href="#">Deeply Dropdown</a></li>
-                                                                <li><a href="#">Deeply Dropdown</a></li>
-                                                                <li><a href="#">Deeply Dropdown</a></li>
-                                                                <li><a href="#">Deeply Dropdown</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">Even Dropdown</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="@Url.Action("Event", "Home")">Events</a></li>
-                                        <li><a href="@Url.Action("Blog", "Home")">News</a></li>
-                                        <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-                                    </ul>
+                                        <!-- Login/Register & Cart Button -->
+                                        <div class="login-register-cart-button d-flex align-items-center">
+                                            <!-- Login/Register -->
+                                            <div class="login-register-btn mr-50">
+                                                <a href="@Url.Action("Login", "Home")">Login</a>
+                                            </div>
 
-                                    <!-- Login/Register & Cart Button -->
-                                    <div class="login-register-cart-button d-flex align-items-center">
-                                        <!-- Login/Register -->
-                                        <div class="login-register-btn mr-50">
-                                            <a href="login.html" id="loginBtn">Login / Register</a>
-                                        </div>
-
-                                        <!-- Cart Button -->
-                                        <div class="cart-btn">
-                                            <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
+                                            <!-- Cart Button -->
+                                            <div class="cart-btn">
+                                                <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Nav End -->
-
+                                    <!-- Nav End -->
+                                };
                             </div>
                         </nav>
                     </div>

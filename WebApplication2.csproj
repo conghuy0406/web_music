@@ -142,9 +142,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaiBao.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\BaiHat.cs" />
+    <Compile Include="Models\CaSi.cs" />
     <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\TacGia.cs" />
+    <Compile Include="Models\NguoiDung.cs" />
+    <Compile Include="Models\sysdiagrams.cs" />
+    <Compile Include="Models\TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +330,7 @@
     <Content Include="Views\Home\elements.cshtml" />
     <Content Include="Views\Home\event.cshtml" />
     <Content Include="Views\Home\contact.cshtml" />
+    <Content Include="Views\Home\register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
